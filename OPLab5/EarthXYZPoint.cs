@@ -18,9 +18,9 @@ namespace OPLab5
     // it will be z: true for the Eastern hemisphere (or the Prime meridian), false for the Western
     struct EarthXYZPoint
     {
-        public double x;
-        public double y;
-        public bool z;
+        public readonly double x;
+        public readonly double y;
+        public readonly bool z;
 
         // positive longitude denotes the Eastern hemisphere
         public EarthXYZPoint(double latitude, double longitude)
