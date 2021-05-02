@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace OPLab5
 {
+
+    // the file data translates directly into this struct
     struct EarthPoint
     {
         public readonly double latitude;
