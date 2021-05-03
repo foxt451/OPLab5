@@ -6,7 +6,9 @@ namespace OPLab5
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string[] a = "fdfdg;;;dbgfdg".Split(';');
+            Console.WriteLine(a[0]);
+            Console.WriteLine(a[1]);
         }
     }
 }
