@@ -8,7 +8,7 @@ namespace OPLab5
 {
 
     // the file data translates directly into this struct
-    struct EarthPoint
+    public struct EarthPoint
     {
         public readonly double latitude;
         public readonly double longitude;
