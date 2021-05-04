@@ -18,9 +18,10 @@ namespace OPLab5
 
         public RTreeNode()
         {
+            mbr = new MBR();
         }
 
-        public RTreeNode(List<EarthPoint> points) 
+        public RTreeNode(List<EarthPoint> points) : this()
         {
             IsLeaf = true;
             foreach(var point in points)
@@ -29,7 +30,7 @@ namespace OPLab5
             }
         }
 
-        public RTreeNode(List<RTreeNode> subNodes)
+        public RTreeNode(List<RTreeNode> subNodes) : this()
         {
             IsLeaf = false;
             foreach(var node in subNodes)
