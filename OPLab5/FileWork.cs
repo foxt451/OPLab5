@@ -21,8 +21,8 @@ namespace OPLab5
                         {
                             continue;
                         }
-                        double latitude = double.Parse(lineArray[0]);
-                            double longitude = double.Parse(lineArray[1]);
+                        double latitude = double.Parse(lineArray[0].Replace(',', '.'));
+                            double longitude = double.Parse(lineArray[1].Replace(',', '.'));
                             string type = lineArray[2];
                             string subtype = lineArray[3];
                             string name = lineArray[4];
