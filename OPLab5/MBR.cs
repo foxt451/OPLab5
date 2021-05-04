@@ -90,7 +90,7 @@ namespace OPLab5
 
         public double GetArea()
         {
-            return (max.latitude - min.latitude) * (max.longitude - max.longitude);
+            return (max.latitude - min.latitude) * (max.longitude - min.longitude);
         }
 
         public override string ToString()

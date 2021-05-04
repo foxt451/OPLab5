@@ -170,7 +170,7 @@ namespace OPLab5
             if (indexesLeft.Count > 0)
             {
                 double potentialAreaIncrease1 = firstGroupMBR.AreaIncreaseAfterAdjusting(mbrs[indexesLeft[0]]);
-                double potentialAreaIncrease2 = firstGroupMBR.AreaIncreaseAfterAdjusting(mbrs[indexesLeft[0]]);
+                double potentialAreaIncrease2 = secondGroupMBR.AreaIncreaseAfterAdjusting(mbrs[indexesLeft[0]]);
                 if (potentialAreaIncrease1 <= potentialAreaIncrease2)
                 {
                     firstGroup.Add(indexesLeft[0]);
