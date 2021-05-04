@@ -8,7 +8,7 @@ namespace OPLab5
 {
     // minimum bounding rectangle denotes the minimum space (rectangle) we require
     // to include all our points/objects
-    class MBR
+    public class MBR
     {
         public (double latitude, double longitude) min;
         public (double latitude, double longitude) max;

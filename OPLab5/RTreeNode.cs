@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OPLab5
 {
-    class RTreeNode
+    public class RTreeNode
     {
         // true if contains points themselves, not other RTreeNode's
         public bool IsLeaf { get; private set; } = true;
@@ -14,7 +14,7 @@ namespace OPLab5
         public int children = 0;
         // we need parent to propagate split and MBR resize
         public RTreeNode parent;
-        private MBR mbr;
+        public MBR mbr;
 
         public RTreeNode()
         {

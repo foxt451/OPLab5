@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 
 namespace OPLab5
@@ -5,25 +6,34 @@ namespace OPLab5
     public class SearchLocation
     {
         Circle circle = new Circle(1, 2, 3);
-        
-        private double max_x1 = 0;
         private List<EarthPoint> pointInCircle = new List<EarthPoint>();
-        public void SearchInRadius()
+        public void SearchInRadius(RTree tree)
         {
-            RTreeNode current = new RTreeNode();
-            if (!current.IsLeaf)
+            Stack<RTreeNode> nodes = new Stack<RTreeNode>(); 
+            nodes.Push(tree.root);
+            while (nodes.Count != 0)
             {
-                if (RecAndCircle.Intersection(circle))
+                RTreeNode current = nodes.Pop();
+                if (!current.IsLeaf)
                 {
-                    SearchInRadius();
+                    foreach (RTreeNode node in current.subNodes)
+                    {
+                        if (RecAndCircle.Intersection(circle, node.mbr))
+                        {
+                            nodes.Push(node);
+                        }
+                    }
                 }
-                // пересекаются ли дети с областью circle
-                // если да, то вызвать серч
-            }
-            else
-            {
-                //pointInCircle.Add();
-               // записи, которіе в лситках добавить в рез 
+                else
+                {
+                    foreach (EarthPoint point in current.points)
+                    {
+                        if (RecAndCircle.DistanceTwoPoints(point.latitude, circle.latitude, point.longitude, circle.longitude)<=circle.radius)
+                        {
+                            pointInCircle.Add(point);
+                        }
+                    }
+                }
             }
         }
     }

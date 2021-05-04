@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace OPLab5
 {
-    class RTree
+    public class RTree
     {
-        private RTreeNode root;
+        public RTreeNode root;
 
         public RTree()
         {
