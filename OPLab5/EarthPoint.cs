@@ -26,5 +26,10 @@ namespace OPLab5
             this.name = name;
             this.address = address;
         }
+
+        public override string ToString()
+        {
+            return $"{latitude} {longitude} {type} {name}";
+        }
     }
 }

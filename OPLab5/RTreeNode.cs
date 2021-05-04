@@ -132,6 +132,7 @@ namespace OPLab5
                 subNodes = nodes1;
                 newNode = new(nodes2);
             }
+            children = firstGroup.Count;
 
             if (parent == null)
             {
@@ -206,7 +207,21 @@ namespace OPLab5
             }
             return (index1, index2);
         }
-        
+
+        public override string ToString()
+        {
+            string result = "";
+            if (IsLeaf)
+            {
+                result += $"leaf node, mbr {mbr}";
+            }
+            else
+            {
+                result += $"non-leaf node, mbr {mbr}";
+            }
+            return result;
+        }
+
 
         // if !IsLeaf, will contain other, deeper, nodes
         public List<RTreeNode> subNodes = new();

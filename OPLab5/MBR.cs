@@ -92,5 +92,10 @@ namespace OPLab5
         {
             return (max.latitude - min.latitude) * (max.longitude - max.longitude);
         }
+
+        public override string ToString()
+        {
+            return $"(min: ({min.latitude}, {min.longitude}), max: ({max.latitude}, {max.longitude})";
+        }
     }
 }

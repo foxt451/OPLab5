@@ -15,6 +15,7 @@ namespace OPLab5
             {
                 tree.AddPoint(points[i]);
             }
+            Console.WriteLine(tree);
         }
     }
 }
