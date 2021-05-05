@@ -10,7 +10,6 @@ namespace OPLab5
             (double latBot, double longBot) = mbr.min;
             (double lat3, double long3) = (latTop, longBot);
             (double lat4, double long4) = (latBot, longTop);
-            // крайние точка круга в прямоугольнике
             if (DistanceTwoPoints(circle.latitude, latTop, circle.longitude, longTop)<=circle.radius)
             {
                 return true;
@@ -31,7 +30,6 @@ namespace OPLab5
                 {
                     return true;
                 }
-            // расстояние от центра до вершини меньше, чем радиус
             return false;
         }
 

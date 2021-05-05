@@ -5,10 +5,10 @@ namespace OPLab5
 {
     public class SearchLocation
     {
-        Circle circle = new Circle(1, 2, 3);
         private List<EarthPoint> pointInCircle = new List<EarthPoint>();
-        public void SearchInRadius(RTree tree)
+        public List<EarthPoint> Search(RTree tree, double center1, double center2, double radius, string type = "unknown")
         {
+            Circle circle = new Circle(center1, center2, radius);
             Stack<RTreeNode> nodes = new Stack<RTreeNode>(); 
             nodes.Push(tree.root);
             while (nodes.Count != 0)
@@ -30,11 +30,21 @@ namespace OPLab5
                     {
                         if (RecAndCircle.DistanceTwoPoints(point.latitude, circle.latitude, point.longitude, circle.longitude)<=circle.radius)
                         {
-                            pointInCircle.Add(point);
+                            if (type == "unknown")
+                            {
+                                pointInCircle.Add(point);
+                            }
+
+                            if (point.type == type)
+                            {
+                                pointInCircle.Add(point);
+                            }
                         }
                     }
                 }
             }
+
+            return pointInCircle;
         }
     }
 }
