@@ -10,7 +10,7 @@ namespace OPLab5
     {
         static void Main(string[] args)
         {
-            //args = new[] {"--db=data.csv", " --lat=50"," --long=29","--size=10"};
+            args = new[] {"--db=data.csv", " --lat=48,85"," --long=37,6","--size=0,5"};
             string path = Directory.GetCurrentDirectory();
             List<EarthPoint> points = FileWork.ReadFile(path+"\\"+args[0].Split('=')[1]);
             RTree tree = new RTree();
