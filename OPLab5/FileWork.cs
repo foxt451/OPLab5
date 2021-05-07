@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 
 namespace OPLab5
@@ -21,8 +22,8 @@ namespace OPLab5
                         {
                             continue;
                         }
-                        double latitude = Math.Round(double.Parse(lineArray[0].Replace(',', '.')), 5);
-                            double longitude = Math.Round(double.Parse(lineArray[1].Replace(',', '.')),5);
+                        double latitude = Math.Round(double.Parse(lineArray[0].Replace(',', '.'), CultureInfo.InvariantCulture), 5);
+                            double longitude = Math.Round(double.Parse(lineArray[1].Replace(',', '.'), CultureInfo.InvariantCulture),5);
                             string type = lineArray[2];
                             string subtype = lineArray[3];
                             string name = lineArray[4];
