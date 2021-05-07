@@ -38,6 +38,7 @@ namespace OPLab5
             {
                 Console.WriteLine(earthPoints[i]);
             }
+            Console.WriteLine(earthPoints.Count);
         }
     }
 }

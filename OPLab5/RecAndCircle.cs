@@ -8,29 +8,13 @@ namespace OPLab5
         {
             (double latTop, double longTop) = mbr.max;
             (double latBot, double longBot) = mbr.min;
-            (double lat3, double long3) = (latTop, longBot);
-            (double lat4, double long4) = (latBot, longTop);
-            if (DistanceTwoPoints(circle.latitude, latTop, circle.longitude, longTop)<=circle.radius)
+            double XNearest = Math.Max(latBot, Math.Min(circle.latitude, latTop));
+            double YNearest = Math.Max(longBot, Math.Min(circle.longitude, longTop));
+            if (DistanceTwoPoints(XNearest, circle.latitude, YNearest, circle.longitude) <= circle.radius)
             {
                 return true;
             }
-            if (DistanceTwoPoints(circle.latitude, latBot, circle.longitude, longBot)<=circle.radius)
-            {
-                return true;
-            }
-            if (DistanceTwoPoints(circle.latitude, lat3, circle.longitude, long3)<=circle.radius)
-            {
-                return true;
-            }
-            if (DistanceTwoPoints(circle.latitude, lat4, circle.longitude, long4)<=circle.radius)
-            {
-                return true;
-            }
-            if (circle.points.top.latit >= latBot && circle.points.bottom.latit <= latTop && circle.points.left.longit <= longTop && circle.points.right.longit >= longBot)
-                {
-                    return true;
-                }
-            return false;
+            else return false;
         }
 
         public static double DistanceTwoPoints(double lat1, double lat2,double long1,double long2)
