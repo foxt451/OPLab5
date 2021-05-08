@@ -27,6 +27,16 @@ namespace OPLab5
             this.address = address;
         }
 
+        public EarthPoint(double latitude, double longitude)
+        {
+            this.latitude = latitude;
+            this.longitude = longitude;
+            this.type = "-";
+            this.subtype = "-";
+            this.name = "-";
+            this.address = "-";
+        }
+
         public override string ToString()
         {
             return $"{latitude} {longitude} {type} {name}";
